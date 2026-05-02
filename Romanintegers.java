@@ -15,11 +15,14 @@ class Romanintegers {
         for(int i=0;i<s.length();i++){//length() is used because the string is method function it call function 
             int currentmap=map.get(s.charAt(i));
             if(i<s.length()-1 &&currentmap<map.get(s.charAt(i+1))){
+                //if the current value is less than the next value then we need to subtract it from the total   
+                //i<s.length()-1 is used to check if the current index is less than the length of the string -1 because we need to compare the current value with the next value
                 total-=currentmap;
             }
             else{
                 total+=currentmap;
             }
+            //if the current value is greater than or equal to the next value then we need to add it to the total
 
         }
         return total;
